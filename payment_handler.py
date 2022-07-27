@@ -1,8 +1,7 @@
 from main import dp, bot
-from config import sberbank_payment
+from config_file.config import sberbank_payment
 
-from aiogram.types import Message, ShippingOption, ShippingQuery, LabeledPrice
-from aiogram.types.message import ContentType
+from aiogram.types import Message, ShippingOption, LabeledPrice
 
 prices = [LabeledPrice(label='Подписка на 30 дней', amount=10000)]
 

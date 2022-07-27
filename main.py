@@ -2,12 +2,9 @@ import logging
 import sqlite3
 import os
 import re
-import keyboard
-import threading
 from aiogram import Bot, Dispatcher, executor
-from aiogram.types import Message, ShippingOption, ShippingQuery, LabeledPrice
-from config import bot_token, sberbank_payment
-import asyncio
+from aiogram.types import Message, ShippingOption, LabeledPrice
+from config_file.config import bot_token, sberbank_payment
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -15,7 +12,7 @@ logging.basicConfig(level=logging.INFO)
 # Initialize bot and dispatcher
 bot = Bot(token=bot_token)
 dp = Dispatcher(bot)
-db_path = 'inventory_bd.db'
+db_path = 'bd/inventory_bd.db'
 
 
 def bd_insert(msg_text):
